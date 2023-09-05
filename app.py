@@ -11,9 +11,9 @@ def hello_name(name):              # call method hello_name
 
 @app.route("/about")
 def about():
-    name = request.arg.get('name')
+    name = request.arg.get('name') if request.args.get('name') else "Hello World!" 
     return render_template("about.html", aboutName=name)  
-    name = request.args.get('name') if request.args.get('name') else "Hello World!" 
+    
 
 if __name__ == "__main__":        # when running python app.py
     app.run()                     # run the flask app
