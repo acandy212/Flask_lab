@@ -1,9 +1,9 @@
-from flask import Flask           # import flask framework
+from flask import Flask, render_template          # import flask framework
 app = Flask(__name__)             # create an app instance
 
 @app.route("/")                   # use the home url
 def hello():                      # method called hello
-    return "Hello World!"         # returns "hello world"
+    return render_template("index.html")        # returns "hello world"
 
 @app.route("/<name>")              # route with URL variable /<name>
 def hello_name(name):              # call method hello_name
